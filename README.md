@@ -42,7 +42,7 @@ For simplicity, let's just create one public page for Dashboard, we will then re
 
 The file resources/views/layouts/navigation.blade.php becomes:
 
-<pre><code>
+
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -84,7 +84,7 @@ The file resources/views/layouts/navigation.blade.php becomes:
         </div>
     </div>
 </nav>
-</code></pre>
+
 
 In the routes file web.php, we need only one route to the index page and it can only be one view. The CRUD for routes will use the vue-router.
 
