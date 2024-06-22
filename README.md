@@ -22,12 +22,14 @@ We'll set up the Laravel 11 framework, install the Vue.js JavaScript framework, 
 
 Let's configure the details of the Database:
 
-DB_CONNECTION=mysql 
-DB_HOST=127.0.0.1 
-DB_PORT=3306 
-DB_DATABASE=<DATABASE NAME>
-DB_USERNAME=<DATABASE USERNAME>
-DB_PASSWORD=<DATABASE PASSWORD>
+<pre><code>
+DB_CONNECTION=mysql <br>
+DB_HOST=127.0.0.1 <br>
+DB_PORT=3306 <br>
+DB_DATABASE=<DATABASE NAME><br>
+DB_USERNAME=<DATABASE USERNAME><br>
+DB_PASSWORD=<DATABASE PASSWORD><br>
+</code></pre>
 
 After installing Laravel, let's proceed to install Laravel Breeze.
 
