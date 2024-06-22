@@ -90,7 +90,7 @@ In the routes file web.php, we need only one route to the index page and it can 
 
 The file routes/web.php becomes:
 
-<pre><code>
+
 <?php
 
 use App\Http\Controllers\ProfileController;
@@ -131,7 +131,7 @@ So let's open the file resources/views/layouts/app.blade.php and add the attribu
 .
 .
 
-</code></pre>
+
 
 <h4>Vue.js configuration</h4>
 
