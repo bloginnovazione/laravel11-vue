@@ -317,46 +317,45 @@ Let's now try a simple modification in the Vue file: let's add a simple static t
 
 Then the file resources/js/components/Posts/Index.vue becomes:
 
-<pre><code>
-<template>
-    <div class="overflow-hidden overflow-x-auto p-6 bg-white border-gray-200">
-        <div class="min-w-full align-middle">
-            <table class="min-w-full divide-y divide-gray-200 border">
-                <thead>
-                <tr>
-                    <th class="px-6 py-3 bg-gray-50 text-left">
-                        <span class="text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">ID</span>
-                    </th>
-                    <th class="px-6 py-3 bg-gray-50 text-left">
-                        <span class="text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Title</span>
-                    </th>
-                    <th class="px-6 py-3 bg-gray-50 text-left">
-                        <span class="text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Content</span>
-                    </th>
-                    <th class="px-6 py-3 bg-gray-50 text-left">
-                        <span class="text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Created at</span>
-                    </th>
-                </tr>
-                </thead>
-                <tbody class="bg-white divide-y divide-gray-200 divide-solid">
-                <tr>
-                    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">1</td>
-                    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">A</td>
-                    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">Poe switched his focus to prose, and spent the next several years working for literary journals and periodicals, becoming known for his own style of literary criticism. His work forced him to move between several cities, including Baltimore, Philadelphia, and New York City. In 1836, when he was 27, he married his 13-year-old cousin, Virginia Clemm. She died of tuberculosis in 1847. In January 1845, he published his poem "The Raven" to instant success. He planned for years to produce his own journal The Penn, later renamed The Stylus. But before it began publishing, Poe died in Baltimore in 1849, aged 40, under mysterious circumstances. The cause of his death remains unknown, and has been variously attributed to many causes including disease, alcoholism, substance abuse, and suicide.</td>
-                    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">2024-06-01 13:43:47</td>
-                </tr>
-                <tr>
-                    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">2</td>
-                    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">B</td>
-                    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">Poe switched his focus to prose, and spent the next several years working for literary journals and periodicals, becoming known for his own style of literary criticism. His work forced him to move between several cities, including Baltimore, Philadelphia, and New York City. In 1836, when he was 27, he married his 13-year-old cousin, Virginia Clemm. She died of tuberculosis in 1847. In January 1845, he published his poem "The Raven" to instant success. He planned for years to produce his own journal The Penn, later renamed The Stylus. But before it began publishing, Poe died in Baltimore in 1849, aged 40, under mysterious circumstances. The cause of his death remains unknown, and has been variously attributed to many causes including disease, alcoholism, substance abuse, and suicide.</td>
-                    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">2024-06-02 14:43:47</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</template>
-</code></pre>
+
+<pre class="wp-block-code"><code>&lt;template&gt;
+    &lt;div class="overflow-hidden overflow-x-auto p-6 bg-white border-gray-200"&gt;
+        &lt;div class="min-w-full align-middle"&gt;
+            &lt;table class="min-w-full divide-y divide-gray-200 border"&gt;
+                &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th class="px-6 py-3 bg-gray-50 text-left"&gt;
+                        &lt;span class="text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"&gt;ID&lt;/span&gt;
+                    &lt;/th&gt;
+                    &lt;th class="px-6 py-3 bg-gray-50 text-left"&gt;
+                        &lt;span class="text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"&gt;Title&lt;/span&gt;
+                    &lt;/th&gt;
+                    &lt;th class="px-6 py-3 bg-gray-50 text-left"&gt;
+                        &lt;span class="text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"&gt;Content&lt;/span&gt;
+                    &lt;/th&gt;
+                    &lt;th class="px-6 py-3 bg-gray-50 text-left"&gt;
+                        &lt;span class="text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"&gt;Created at&lt;/span&gt;
+                    &lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody class="bg-white divide-y divide-gray-200 divide-solid"&gt;
+                &lt;tr&gt;
+                    &lt;td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900"&gt;1&lt;/td&gt;
+                    &lt;td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900"&gt;A&lt;/td&gt;
+                    &lt;td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900"&gt;Poe switched his focus to prose, and spent the next several years working for literary journals and periodicals, becoming known for his own style of literary criticism. His work forced him to move between several cities, including Baltimore, Philadelphia, and New York City. In 1836, when he was 27, he married his 13-year-old cousin, Virginia Clemm. She died of tuberculosis in 1847. In January 1845, he published his poem "The Raven" to instant success. He planned for years to produce his own journal The Penn, later renamed The Stylus. But before it began publishing, Poe died in Baltimore in 1849, aged 40, under mysterious circumstances. The cause of his death remains unknown, and has been variously attributed to many causes including disease, alcoholism, substance abuse, and suicide.&lt;/td&gt;
+                    &lt;td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900"&gt;2024-06-01 13:43:47&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900"&gt;2&lt;/td&gt;
+                    &lt;td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900"&gt;B&lt;/td&gt;
+                    &lt;td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900"&gt;Poe switched his focus to prose, and spent the next several years working for literary journals and periodicals, becoming known for his own style of literary criticism. His work forced him to move between several cities, including Baltimore, Philadelphia, and New York City. In 1836, when he was 27, he married his 13-year-old cousin, Virginia Clemm. She died of tuberculosis in 1847. In January 1845, he published his poem "The Raven" to instant success. He planned for years to produce his own journal The Penn, later renamed The Stylus. But before it began publishing, Poe died in Baltimore in 1849, aged 40, under mysterious circumstances. The cause of his death remains unknown, and has been variously attributed to many causes including disease, alcoholism, substance abuse, and suicide.&lt;/td&gt;
+                    &lt;td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900"&gt;2024-06-02 14:43:47&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/template&gt;</code></pre>
 
 vue component table
 Vue component
@@ -365,13 +364,14 @@ But now we have a problem with Tailwind: it doesn't pick up the new CSS styles w
 
 Let's edit the file tailwind.config.js:
 
-<pre><code>
-import defaultTheme from 'tailwindcss/defaultTheme';
+
+
+<pre class="wp-block-code"><code>import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
 
 /** @type {import('tailwindcss').Config} */
 export default {
-    content: [
+    content: &#91;
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
@@ -381,14 +381,15 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: &#91;'Figtree', ...defaultTheme.fontFamily.sans],
             },
         },
     },
 
-    plugins: [forms],
-};
-</code></pre>
+    plugins: &#91;forms],
+};</code></pre>
+
+
 
 vue component tailwind
 Vue component with Tailwind
