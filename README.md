@@ -43,47 +43,47 @@ For simplicity, let's just create one public page for Dashboard, we will then re
 The file resources/views/layouts/navigation.blade.php becomes:
 
 
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
-    <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-            <div class="flex">
-                <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
-                    </a>
-                </div>
+<pre class="wp-block-code"><code>&lt;nav x-data="{ open: false }" class="bg-white border-b border-gray-100"&gt;
+    &lt;!-- Primary Navigation Menu --&gt;
+    &lt;div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
+        &lt;div class="flex justify-between h-16"&gt;
+            &lt;div class="flex"&gt;
+                &lt;!-- Logo --&gt;
+                &lt;div class="shrink-0 flex items-center"&gt;
+                    &lt;a href="{{ route('dashboard') }}"&gt;
+                        &lt;x-application-logo class="block h-9 w-auto fill-current text-gray-800" /&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
 
-                <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                &lt;!-- Navigation Links --&gt;
+                &lt;div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex"&gt;
+                    &lt;x-nav-link :href="route('dashboard')" :active="request()-&gt;routeIs('dashboard')"&gt;
                         {{ __('Dashboard') }}
-                    </x-nav-link>
-                </div>
-            </div>
+                    &lt;/x-nav-link&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
 
-            <!-- Hamburger -->
-            <div class="-me-2 flex items-center sm:hidden">
-                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
-                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </div>
+            &lt;!-- Hamburger --&gt;
+            &lt;div class="-me-2 flex items-center sm:hidden"&gt;
+                &lt;button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"&gt;
+                    &lt;svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24"&gt;
+                        &lt;path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /&gt;
+                        &lt;path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /&gt;
+                    &lt;/svg&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
 
-    <!-- Responsive Navigation Menu -->
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+    &lt;!-- Responsive Navigation Menu --&gt;
+    &lt;div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden"&gt;
+        &lt;div class="pt-2 pb-3 space-y-1"&gt;
+            &lt;x-responsive-nav-link :href="route('dashboard')" :active="request()-&gt;routeIs('dashboard')"&gt;
                 {{ __('Dashboard') }}
-            </x-responsive-nav-link>
-        </div>
-    </div>
-</nav>
+            &lt;/x-responsive-nav-link&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
 
 
 In the routes file web.php, we need only one route to the index page and it can only be one view. The CRUD for routes will use the vue-router.
