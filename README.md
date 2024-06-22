@@ -163,27 +163,31 @@ In the devDependencies of package.json, we remove the line
 
 Now we can install Vue and Vue loader and configure Vue.
 
+
 <pre><code>
 npm install vue vue-loader
     </code></pre>
 
+
 Next, we need to install the Vue Vite plugin.
+
 
 <pre><code>
 npm install --save-dev @vitejs/plugin-vue
     </code></pre>
 
+
 And let's edit the file vite.config.js present in laravel root, as follows:
 
-<pre><code>
-import { defineConfig } from 'vite';
+
+<pre class="wp-block-code"><code>import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
-    plugins: [
+    plugins: &#91;
         laravel({
-            input: [
+            input: &#91;
                 'resources/css/app.css',
                 'resources/js/app.js',
             ],
@@ -203,8 +207,8 @@ export default defineConfig({
             vue: 'vue/dist/vue.esm-bundler.js',
         },
     },
-});
-    </code></pre>
+});</code></pre>
+
 
 <h4>Vue component creation</h4>
 
@@ -212,26 +216,28 @@ Let's add a Vue component on the Dashboard page. In the future it will show the 
 
 Let's edit the file resources/views/dashboard.blade.php as follows:
 
-<pre><code>
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+
+
+<pre class="wp-block-code"><code>&lt;x-app-layout&gt;
+    &lt;x-slot name="header"&gt;
+        &lt;h2 class="font-semibold text-xl text-gray-800 leading-tight"&gt;
             {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+        &lt;/h2&gt;
+    &lt;/x-slot&gt;
  
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
+    &lt;div class="py-12"&gt;
+        &lt;div class="max-w-7xl mx-auto sm:px-6 lg:px-8"&gt;
+            &lt;div class="bg-white overflow-hidden shadow-sm sm:rounded-lg"&gt;
+                &lt;div class="p-6 text-gray-900"&gt;
                     {{ __("You're logged in!") }}  
-                    <posts-index></posts-index> 
-                </div>
-            </div>
-        </div>
-    </div>
-</x-app-layout>
-</code></pre>
+                    &lt;posts-index&gt;&lt;/posts-index&gt; 
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/x-app-layout&gt;</code></pre>
+
+
 
 Substituting {{ __("You're logged in!") }} with <posts-index></posts-index>.
 
@@ -241,12 +247,14 @@ Don't miss the most important news on innovation. Sign up to receive them by ema
 
 Let's edit the file resources/js/components/Posts/Index.vue:
 
+
 <pre><code>
 <template>
     Table coming soon.
 </template>
 </code></pre>
     
+
 Each Vue component consists of two parts:
 
     <pre><code>
