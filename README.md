@@ -18,7 +18,7 @@ To test Vue.js we will write code to manage the “Blog Posts” Data entity.</b
 
 We'll set up the Laravel 11 framework, install the Vue.js JavaScript framework, and get it working with Vite. Then we will load our first Vue component.
 
-composer create-project --prefer-dist laravel/laravel crud-spa
+<pre><code>composer create-project --prefer-dist laravel/laravel crud-spa</code></pre>
 
 Let's configure the details of the Database:
 
@@ -33,13 +33,14 @@ After installing Laravel, let's proceed to install Laravel Breeze.
 
 You do NOT need Breeze to use Vue.js. It's just a personal preference: we won't use it for the authentication system and we won't use its Vue version, it's just for quick and easy visual design, so we will remove many of its parts.
 
-composer require laravel/breeze --dev
-php artisan breeze:install blade
+<pre><code>composer require laravel/breeze --dev
+php artisan breeze:install blade</code></pre>
 
 For simplicity, let's just create one public page for Dashboard, we will then remove all links from the navigation where authentication is called. Both in desktop and mobile menu.
 
 The file resources/views/layouts/navigation.blade.php becomes:
 
+<pre><code>
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -81,11 +82,13 @@ The file resources/views/layouts/navigation.blade.php becomes:
         </div>
     </div>
 </nav>
+</code></pre>
 
 In the routes file web.php, we need only one route to the index page and it can only be one view. The CRUD for routes will use the vue-router.
 
 The file routes/web.php becomes:
 
+<pre><code>
 <?php
 
 use App\Http\Controllers\ProfileController;
@@ -93,10 +96,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'dashboard')->name('dashboard'); 
 
+    </code></pre>
+
 Now we need to specify when Vue will be “mounted”. That is, the main element of the HTML structure, where Vue would live “inside it”. Usually, it is one of the main div elements in the main layout and to identify it we assign it id=”app”.
 
 So let's open the file resources/views/layouts/app.blade.php and add the attribute in the first div after opening the body:
 
+<pre><code>
 .
 .
 .
@@ -123,12 +129,15 @@ So let's open the file resources/views/layouts/app.blade.php and add the attribu
 .
 .
 
+</code></pre>
+
 <h4>Vue.js configuration</h4>
 
 By defaultdefinita, Breeze adds Alpine.js, which we won't use though. So we modify the package.json, present in the Laravel root, and remove Alpine.js.
 
 In the devDependencies of package.json, we remove the line
 
+<pre><code>
 {
     "private": true,
     "type": "module",
@@ -138,7 +147,6 @@ In the devDependencies of package.json, we remove the line
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.2",
-        "alpinejs": "^3.4.2",
         "autoprefixer": "^10.4.2",
         "axios": "^1.6.4",
         "laravel-vite-plugin": "^1.0",
@@ -147,17 +155,23 @@ In the devDependencies of package.json, we remove the line
         "vite": "^5.0"
     }
 }
+</code></pre>
 
 Now we can install Vue and Vue loader and configure Vue.
 
+<pre><code>
 npm install vue vue-loader
+    </code></pre>
 
 Next, we need to install the Vue Vite plugin.
 
+<pre><code>
 npm install --save-dev @vitejs/plugin-vue
+    </code></pre>
 
 And let's edit the file vite.config.js present in laravel root, as follows:
 
+<pre><code>
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
@@ -186,6 +200,7 @@ export default defineConfig({
         },
     },
 });
+    </code></pre>
 
 <h4>Vue component creation</h4>
 
@@ -193,6 +208,7 @@ Let's add a Vue component on the Dashboard page. In the future it will show the 
 
 Let's edit the file resources/views/dashboard.blade.php as follows:
 
+<pre><code>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -211,6 +227,7 @@ Let's edit the file resources/views/dashboard.blade.php as follows:
         </div>
     </div>
 </x-app-layout>
+</code></pre>
 
 Substituting {{ __("You're logged in!") }} with <posts-index></posts-index>.
 
@@ -220,14 +237,18 @@ Don't miss the most important news on innovation. Sign up to receive them by ema
 
 Let's edit the file resources/js/components/Posts/Index.vue:
 
+<pre><code>
 <template>
     Table coming soon.
 </template>
-
+</code></pre>
+    
 Each Vue component consists of two parts:
 
+    <pre><code>
     <script>
     <template>
+    </code></pre>
 
 In this case, we're not doing any JS operations yet, so we won't have the script part, just the template.
 
@@ -235,6 +256,7 @@ Now, back to the element id="app", let's proceed to initialize a Vue app, add th
 
 The file resources/js/app.js becomes:
 
+<pre><code>
 import './bootstrap';
 
 import { createApp } from 'vue'
@@ -243,6 +265,7 @@ import PostsIndex from './components/Posts/Index.vue'
 createApp({})
     .component('PostsIndex', PostsIndex)
     .mount('#app') 
+</code></pre>
 
 In the app.js file defiLet's start the Vue application with createApp(), importing it beforehand We attach a component to the Vue application, importing it beforehand and giving it the name PostIndex.
 
@@ -282,6 +305,7 @@ Let's now try a simple modification in the Vue file: let's add a simple static t
 
 Then the file resources/js/components/Posts/Index.vue becomes:
 
+<pre><code>
 <template>
     <div class="overflow-hidden overflow-x-auto p-6 bg-white border-gray-200">
         <div class="min-w-full align-middle">
@@ -320,6 +344,7 @@ Then the file resources/js/components/Posts/Index.vue becomes:
         </div>
     </div>
 </template>
+</code></pre>
 
 vue component table
 Vue component
@@ -328,6 +353,7 @@ But now we have a problem with Tailwind: it doesn't pick up the new CSS styles w
 
 Let's edit the file tailwind.config.js:
 
+<pre><code>
 import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
 
@@ -350,9 +376,12 @@ export default {
 
     plugins: [forms],
 };
+</code></pre>
 
 vue component tailwind
 Vue component with Tailwind
+
+<pre><code>
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -361,6 +390,7 @@ Vue component with Tailwind
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
+</code></pre>
 
 ## About Laravel
 
