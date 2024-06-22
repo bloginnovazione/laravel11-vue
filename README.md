@@ -91,45 +91,45 @@ In the routes file web.php, we need only one route to the index page and it can 
 The file routes/web.php becomes:
 
 
-<?php
+<pre class="wp-block-code"><code>&lt;?php
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'dashboard')->name('dashboard'); 
+Route::view('/', 'dashboard')-&gt;name('dashboard'); 
+</code></pre>
 
-    </code></pre>
 
 Now we need to specify when Vue will be “mounted”. That is, the main element of the HTML structure, where Vue would live “inside it”. Usually, it is one of the main div elements in the main layout and to identify it we assign it id=”app”.
 
 So let's open the file resources/views/layouts/app.blade.php and add the attribute in the first div after opening the body:
 
-<pre><code>
+<pre class="wp-block-code"><code>.
 .
 .
-.
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        &lt;!-- Fonts --&gt;
+        &lt;link rel="preconnect" href="https://fonts.bunny.net"&gt;
+        &lt;link href="https://fonts.bunny.net/css?family=figtree:400,500,600&amp;display=swap" rel="stylesheet" /&gt;
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100" id="app">
+        &lt;!-- Scripts --&gt;
+        @vite(&#91;'resources/css/app.css', 'resources/js/app.js'])
+    &lt;/head&gt;
+    &lt;body class="font-sans antialiased"&gt;
+        &lt;div class="min-h-screen bg-gray-100" id="app"&gt;
             @include('layouts.navigation')
 
-            <!-- Page Heading -->
+            &lt;!-- Page Heading --&gt;
             @isset($header)
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                &lt;header class="bg-white shadow"&gt;
+                    &lt;div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8"&gt;
                         {{ $header }}
-                    </div>
-                </header>
+                    &lt;/div&gt;
+                &lt;/header&gt;
             @endisset
 .
 .
 .
+</code></pre>
 
 
 
@@ -139,8 +139,8 @@ By defaultdefinita, Breeze adds Alpine.js, which we won't use though. So we modi
 
 In the devDependencies of package.json, we remove the line
 
-<pre><code>
-{
+
+<pre class="wp-block-code"><code>{
     "private": true,
     "type": "module",
     "scripts": {
@@ -149,6 +149,7 @@ In the devDependencies of package.json, we remove the line
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.2",
+        <s>"alpinejs": "^3.4.2",</s>
         "autoprefixer": "^10.4.2",
         "axios": "^1.6.4",
         "laravel-vite-plugin": "^1.0",
@@ -158,6 +159,7 @@ In the devDependencies of package.json, we remove the line
     }
 }
 </code></pre>
+
 
 Now we can install Vue and Vue loader and configure Vue.
 
