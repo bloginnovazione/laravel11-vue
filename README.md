@@ -229,7 +229,6 @@ Let's edit the file resources/views/dashboard.blade.php as follows:
         &lt;div class="max-w-7xl mx-auto sm:px-6 lg:px-8"&gt;
             &lt;div class="bg-white overflow-hidden shadow-sm sm:rounded-lg"&gt;
                 &lt;div class="p-6 text-gray-900"&gt;
-                    {{ __("You're logged in!") }}  
                     &lt;posts-index&gt;&lt;/posts-index&gt; 
                 &lt;/div&gt;
             &lt;/div&gt;
@@ -239,7 +238,7 @@ Let's edit the file resources/views/dashboard.blade.php as follows:
 
 
 
-Substituting {{ __("You're logged in!") }} with <posts-index></posts-index>.
+Substituting {{ __("You're logged in!") }} with <code><pre><posts-index></posts-index></code></pre>.
 
 Now let's proceed to create the Vue component resources/js/components/Posts/Index.vue. For now we will only insert dummy static text inside it.
 Innovation newsletter
