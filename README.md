@@ -96,7 +96,9 @@ The file routes/web.php becomes:
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'dashboard')-&gt;name('dashboard'); 
+Route::get('/', function () {
+    return view('dashboard');
+})->name('dashboard');
 </code></pre>
 
 
