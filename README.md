@@ -247,19 +247,15 @@ Don't miss the most important news on innovation. Sign up to receive them by ema
 Let's edit the file resources/js/components/Posts/Index.vue:
 
 
-<pre><code>
-<template>
+<pre class="wp-block-code"><code>&lt;template&gt;
     Table coming soon.
-</template>
-</code></pre>
+&lt;/template&gt;</code></pre>
     
 
 Each Vue component consists of two parts:
 
-    <pre><code>
-    <script>
-    <template>
-    </code></pre>
+<li><code>&lt;script&gt;</code></li>
+<li><code>&lt;template&gt;</code></li>
 
 In this case, we're not doing any JS operations yet, so we won't have the script part, just the template.
 
